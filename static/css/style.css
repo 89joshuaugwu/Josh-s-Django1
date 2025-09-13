@@ -1,0 +1,54 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-top: 80px;    /* prevents content from hiding behind fixed header */
+    overflow-x: hidden;
+}
+
+.myheader {
+  transition: top 0.3s;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #007bff, #6f42c1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.myservices .carousel-item img {
+    height: 450px; /* Adjust as needed */
+    object-fit: cover; /* Crop image to fit */
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Zoom effect on hover */
+.myservices .carousel-item img:hover {
+    transform: scale(1.1);
+}
+
+#portfolio .card-img-top {
+    height: 220px; /* adjust height as needed */
+    object-fit: cover; /* crop without stretching */
+    object-position: center; /* keeps center of image */
+}
+
+.portfolio-img {
+    height: 250px;           /* Set uniform height */
+    object-fit: cover;       /* Crop and keep aspect ratio */
+    cursor: pointer;         /* Show pointer on hover */
+    transition: transform .3s ease-in-out;
+  }
+
+  .portfolio-img:hover {
+    transform: scale(1.05);  /* Zoom hover effect */
+  }
+

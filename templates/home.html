@@ -1,0 +1,403 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+    <!-- Home Hero--                                                                 -->
+    <div class="myhero">
+        <div class="px-4 pt-4 mt-3 md-5 text-center border-bottom"> 
+            <h1 class="display-4 fw-bold text-body-emphasis">
+            Welcome to <span class="gradient-text">Josh’s Django</span>,<br>
+            your creative partner in <span class="text-primary">digital solutions</span>.
+            </h1> 
+            <div class="col-lg-8 mx-auto"> 
+            <p class="lead mb-4">
+                We specialize in <strong>Web Development</strong>, <strong>UI/UX Design</strong>, <strong>Data Analysis</strong>, 
+                and <strong>Graphics Design</strong> — delivering clean, modern, and powerful solutions that bring your ideas to life.  
+                Our team of curious minds, problem solvers, and digital builders is ready to help your business grow. 
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-3">
+                <a href="#myservices" class="btn btn-primary btn-lg px-3 gap-3">Our Services</a>
+                <a href="#mycontact" class="btn btn-outline-secondary btn-lg px-3">Get in Touch</a>
+            </div>
+            </div> 
+            <div class="overflow-hidden" style="max-height: 36vh;"> 
+            <div class="container pt-3 pb-4"> 
+                <img src="{% static 'images/heroimage.jpg' %}" 
+                    class="img-fluid border rounded-3 shadow-lg mb-4" 
+                    alt="Hero image" width="950" height="500" loading="lazy"> 
+            </div> 
+            </div> 
+        </div>
+    </div>
+
+    <!-- Home Services -->
+    <div class="myservices container py-5" id="myservices">
+        <h2 class="text-center mb-4 pt-4">Our Services</h2>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">            
+            <!-- Carousel indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Web Development"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="UI/UX Design"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Data Analysis"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Graphics Design"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'images/web.jpg' %}" class="d-block w-100" alt="Web Development">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h5>Web Development</h5>
+                        <p>We build fast, secure, and responsive websites tailored to your business needs, using modern frameworks and best practices.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/UIUX.jpg' %}" class="d-block w-100" alt="UI/UX Design">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h5>UI & UX Development</h5>
+                        <p>We craft intuitive, user-friendly designs that deliver exceptional digital experiences for your customers.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/data.jpg' %}" class="d-block w-100" alt="Data Analysis">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h5>Data Analysis</h5>
+                        <p>We help you make informed decisions by transforming raw data into clear insights with smart analytics.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/graphics.jpg' %}" class="d-block w-100" alt="Graphics Design">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h5>Graphics Design</h5>
+                        <p>We design stunning visuals and branding materials that make your business stand out and connect with your audience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Home About section -->
+    <div id="myabout" class="container py-5">
+        <div class="row align-items-center">
+                <div class="col-md-5 mb-4 mb-md-0">
+                <img src="{% static 'images/homeabout.jpg' %}" 
+                    class="img-fluid rounded shadow" 
+                    alt="About Us">
+            </div>
+
+            <div class="col-md-7">
+            <h2 class="fw-bold">About Us</h2>
+            <p class="text-muted">
+                At <strong>Josh’s Django</strong>, we specialize in delivering 
+                modern, reliable, and creative digital solutions. Our expertise spans 
+                <em>Web Development</em>, <em>UI/UX Design</em>, 
+                <em>Data Analysis</em>, and <em>Graphics Design</em>.  
+                With a blend of technical skill and creative vision, we help brands 
+                transform ideas into powerful online experiences.
+            </p>
+            <a href="/about/" class="btn btn-outline-primary btn-lg mt-2">
+                Learn More
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Portfolio -->
+    <div id="portfolio" class="album py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Portfolio</h2>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+            <!-- Portfolio Item 1 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'images/portfolio2.png' %}" class="card-img-top portfolio-img" alt="Web Development Project" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="{% static 'images/portfolio2.png' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">Accommodation Listing Platforms</h5>
+                            <p class="card-text">AccomPadi, A modern online website for student to list houses as agents or search for acccommodations.</p>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Portfolio Item 2 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'images/portfolio7.png' %}" class="card-img-top portfolio-img" alt="UI/UX Design" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="{% static 'images/portfolio7.png' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">UI/UX Redesign of ReelNix</h5>
+                            <p class="card-text">Complete redesign of a ReelNix entertainment website mobile app to improve user experience and accessibility.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'images/portfolio1.png' %}" class="card-img-top portfolio-img" alt="Data Dashboard" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="{% static 'images/portfolio1.png' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analytics Dashboard</h5>
+                            <p class="card-text">Interactive dashboard providing real-time insights for ReelNix Entertainment Website.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'images/portfolio3.png' %}" class="card-img-top portfolio-img" alt="Web Development" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="{% static 'images/portfolio3.png' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">EdTech platform Website</h5>
+                            <p class="card-text">AcadeGrade, an Academic CGPA Performance Tracker to calculate your CGPA easily and accurately with our advanced calculator tool.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'images/portfolio4.png' %}" class="card-img-top portfolio-img" alt="Data Dashboard" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="{% static 'images/portfolio4.png' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">Quiz Platforms Website</h5>
+                            <p class="card-text">BrainBlitzV2, an online platform with APIs to test your knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{% static 'images/portfolio6.png' %}" class="card-img-top portfolio-img" alt="Graphics Design" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="{% static 'images/portfolio6.png' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">Brand Identity</h5>
+                            <p class="card-text">Logo, social media kit, and full branding package for a Listing Website AccomPadi.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Enlarged Image -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid rounded" alt="Portfolio Preview">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Testimonial -->
+    <div id="testimonials" class="container py-5">
+        <h2 class="text-center mb-5">What Our Clients Say</h2>
+        <div class="row text-center">
+            
+            <!-- Testimonial 1 -->
+            <div class="col-lg-4 mb-4">
+                <img src="{% static 'images/testimonial1.jpg' %}" 
+                    class="bd-placeholder-img rounded-circle mb-3 shadow" 
+                    alt="Client 1" width="140" height="140">
+                <h4 class="fw-bold">Miss Manchester United</h4>
+                <p class="text-muted">
+                    "Josh’s Django transformed our online presence. 
+                    The website they built is fast, modern, and has helped us grow."
+                </p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="col-lg-4 mb-4">
+                <img src="{% static 'images/testimonial2.jpg' %}" 
+                    class="bd-placeholder-img rounded-circle mb-3 shadow" 
+                    alt="Client 2" width="140" height="140">
+                <h4 class="fw-bold">Miss Chelsea FC</h4>
+                <p class="text-muted">
+                    "Their UI/UX design brought our app to life. 
+                    Our customers love the smooth experience!"
+                </p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="col-lg-4 mb-4">
+                <img src="{% static 'images/testimonial3.jpg' %}" 
+                    class="bd-placeholder-img rounded-circle mb-3 shadow" 
+                    alt="Client 3" width="140" height="140">
+                <h4 class="fw-bold">Miss Arsenal FC</h4>
+                <p class="text-muted">
+                    "The data analysis service gave us clear insights into our business. 
+                    Their team really knows their stuff."
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Home Pricing -->
+    <div id="pricing" class="myPricing container py-5">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-bold text-body-emphasis">Our Pricing</h1>
+            <p class="fs-5 text-muted">
+            Flexible plans tailored for aspiring tech innovators. Choose the program 
+            that best fits your learning journey and start building real-world skills today.
+            </p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-4 mb-3 text-center">
+
+            <!-- Web Development -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-bold">Web Development</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            ₦150,000 <small class="text-body-secondary fw-light">/program</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Frontend & Backend Training</li>
+                            <li>Database & Hosting Setup</li>
+                            <li>Real-World Projects</li>
+                            <li>Certificate of Completion</li>
+                        </ul>
+                        <a href="#mycontact" class="w-100 btn btn-lg btn-light">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX Design -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                    <h4 class="my-0 fw-bold">UI/UX Design</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            ₦120,000 <small class="text-body-secondary fw-light">/program</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Figma & Adobe XD Training</li>
+                            <li>User Research & Wireframing</li>
+                            <li>Prototyping & Testing</li>
+                            <li>Certificate of Completion</li>
+                        </ul>
+                        <a href="#mycontact" class="w-100 btn btn-lg btn-outline-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analysis -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-bold">Data Analysis</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            ₦150,000 <small class="text-body-secondary fw-light">/program</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Excel, SQL, Python</li>
+                            <li>Data Cleaning & Visualization</li>
+                            <li>Machine Learning Basics</li>
+                            <li>Certificate of Completion</li>
+                        </ul>
+                        <a href="#mycontact" class="w-100 btn btn-lg btn-light">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graphics Design -->
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-bold">Graphics Design</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            ₦100,000 <small class="text-body-secondary fw-light">/program</small>
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Photoshop & Illustrator</li>
+                            <li>Branding & Logo Design</li>
+                            <li>Print & Digital Design</li>
+                            <li>Certificate of Completion</li>
+                        </ul>
+                        <a href="#mycontact" class="w-100 btn btn-lg btn-outline-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Why Us -->
+        <div id="whyus" class="container px-4 py-5">
+        <h2 class="pb-2 border-bottom text-center">Why Choose Us</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+            
+            <!-- Left Content -->
+            <div class="col d-flex flex-column align-items-start gap-2">
+                <h2 class="fw-bold text-body-emphasis">Your Trusted Partner for Digital Solutions</h2>
+                <p class="text-body-secondary">
+                    We combine creativity, speed, and data-driven strategies to deliver reliable solutions that stand out.
+                    Whether it’s web development, design, or analytics, we ensure excellence every time.
+                </p>
+                <a href="#mycontact" class="btn btn-primary btn-lg">Let’s Work Together</a>
+            </div>
+
+            <!-- Right Content -->
+            <div class="col">
+                <div class="row row-cols-1 row-cols-sm-2 g-4">
+                    
+                    <div class="col d-flex flex-column gap-2">
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Fast & Reliable</h4>
+                        <p class="text-body-secondary">We deliver projects on time without compromising quality.</p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Creative Designs</h4>
+                        <p class="text-body-secondary">Unique, user-focused solutions that make you stand out.</p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">Data-Driven</h4>
+                        <p class="text-body-secondary">Our strategies are backed by insights and analytics.</p>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <h4 class="fw-semibold mb-0 text-body-emphasis">24/7 Support</h4>
+                        <p class="text-body-secondary">We’re always available to assist you whenever you need us.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- My contact us -->
+    <div id="mycontact" class="text-center py-5 bg-light">
+        <h2 class="mb-3">Ready to start your project?</h2>
+        <p class="lead">Let’s bring your ideas to life. Get in touch with us today.</p>
+        <a href="/contact/" class="btn btn-primary btn-lg">Contact Us</a>
+    </div>
+
+{% endblock %}
