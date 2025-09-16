@@ -30,7 +30,14 @@
     {% if submitted %}
         <p style="color: green; margin-top: 15px;">
             ✅ Thank you, {{ name }}! Your message has been sent successfully.
+            {% comment %} prints it to console log {% endcomment %}
         </p>
+        <script>
+            console.log("📩 New Contact Message")
+            console.log("Name:", name)
+            console.log("Email:", email)
+            console.log("Message:", message)
+        </script>
     {% endif %}
 
 {% endblock %}
