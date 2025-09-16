@@ -13,7 +13,8 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-    # from django.contrib import admin
+    
+# from django.contrib import admin
 from django.urls import path
 # from django.http import HttpResponse
 from django.shortcuts import render
@@ -35,8 +36,11 @@ urlpatterns = [
 """
 # from django.contrib import admin
 # from django.http import HttpResponse
+from django.contrib import admin # admin import admin site
 from django.urls import path
 from django.shortcuts import render
+
+from contact.views import contact # import the contact view from contact app
 
 def home(request):
     return render(request, "home.html")
@@ -44,27 +48,29 @@ def home(request):
 def about(request):
     return render(request, "about.html")
 
-def contact(request):
-    submitted = False
-    name = ""
+# Contact view moved to contact/views.py for the app structure for models
+# def contact(request):
+#     submitted = False
+#     name = ""
 
-    # Handle form submission
-    if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        message = request.POST.get("message")
+#     # Handle form submission
+#     if request.method == "POST":
+#         name = request.POST.get("name")
+#         email = request.POST.get("email")
+#         message = request.POST.get("message")
         
-        # prints it in the terminal
-        print("📩 New Contact Message")
-        print("Name:", name)
-        print("Email:", email)
-        print("Message:", message)
+#         # prints it in the terminal
+#         print("📩 New Contact Message")
+#         print("Name:", name)
+#         print("Email:", email)
+#         print("Message:", message)
 
-        submitted = True
+#         submitted = True
 
-    return render(request, "contact.html", {"submitted": submitted, "name": name})
+#     return render(request, "contact.html", {"submitted": submitted, "name": name})
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path("", home, name="home"),
     path("about/", about, name="about"),
     path("contact/", contact, name="contact"),
