@@ -39,7 +39,8 @@ urlpatterns = [
 from django.contrib import admin # admin import admin site
 from django.urls import path
 from django.shortcuts import render
-
+from django.conf import settings
+from django.conf.urls.static import static
 from contact.views import contact # import the contact view from contact app
 
 def home(request):
@@ -74,4 +75,10 @@ urlpatterns = [
     path("", home, name="home"),
     path("about/", about, name="about"),
     path("contact/", contact, name="contact"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# # Serve media files during development
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # new
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # new
