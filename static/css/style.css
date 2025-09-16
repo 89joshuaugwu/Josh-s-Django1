@@ -51,4 +51,5 @@ body {
   .portfolio-img:hover {
     transform: scale(1.05);  /* Zoom hover effect */
   }
+  
 

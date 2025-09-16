@@ -45,7 +45,24 @@ def about(request):
     return render(request, "about.html")
 
 def contact(request):
-    return render(request, "contact.html")
+    submitted = False
+    name = ""
+
+    # Handle form submission
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+        
+        # prints it in the terminal
+        print("📩 New Contact Message")
+        print("Name:", name)
+        print("Email:", email)
+        print("Message:", message)
+
+        submitted = True
+
+    return render(request, "contact.html", {"submitted": submitted, "name": name})
 
 urlpatterns = [
     path("", home, name="home"),

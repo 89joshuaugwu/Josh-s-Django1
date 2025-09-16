@@ -5,7 +5,32 @@
 {% block title %}Contact Page{% endblock %}
 
 {% block content %}
-    <h2>Contact Us</h2>
-    <p>This is the <b>contact.html</b> page.</p>
-    <a href="/">Go back to Home</a>
+    <div class="px-4 pt-4 mt-3 md-5">
+        <h1>Contact Us</h1>
+        <p>Have questions? Fill out the fomr below:</p>
+    </div>
+    
+    <form action="" method="post" class="px-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Your Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Your Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message:</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+
+    {% if submitted %}
+        <p style="color: green; margin-top: 15px;">
+            ✅ Thank you, {{ name }}! Your message has been sent successfully.
+        </p>
+    {% endif %}
+
 {% endblock %}
