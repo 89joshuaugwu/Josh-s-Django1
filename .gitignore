@@ -1,11 +1,25 @@
-# Ignore virtual environment directories
-.venv/env/venv
-
-# Ignore local database
-db.sqlite3
-
-# Ignore Python cache files
+# Python
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
 
-# Ignore environment variable files
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Static & media (collected/generated)
+staticfiles/
+media/
+
+# Environment variables
 .env
+
